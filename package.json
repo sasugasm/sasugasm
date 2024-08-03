@@ -1,0 +1,21 @@
+{
+  "name": "sasugasm",
+  "version": "1.0.0",
+  "description": "private github pages webpage",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && npm ci && npx @11ty/eleventy",
+    "clean": "rm -rf docs",
+    "build-local": "npm run clean-local && npm ci && npx @11ty/eleventy",
+    "clean-local": "if exist docs (rd /s /q docs)",
+    "dev": "npm run build-local && npx @11ty/eleventy --serve "
+  },
+  "keywords": [],
+  "author": "sasugasm",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@material/web": "^1.5.1"
+  }
+}

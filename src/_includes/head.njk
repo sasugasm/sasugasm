@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, inital-scale=1.0">
+  <title>Sasu - {{ title }}</title>
+  <link rel="stylesheet" href="{{ 'css/style.css' | url }}">
+  <link rel="icon" type="image/png" href="/img/favicon-32x32.png">
+  <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/"
+        }
+      }
+  </script>
+  <script type="module">
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+</head>
+<body>
+  {{ content | safe }}
+  <footer>
+    <p>&copy;2024-Present Sasugasm</p>
+  </footer>
+</body>

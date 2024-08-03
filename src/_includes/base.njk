@@ -1,0 +1,27 @@
+---
+layout: head.njk
+---
+
+<header>
+  <md-tabs>
+  <md-primary-tab active aria-label="{{ title }}" aria-controls="{{ title }}-panel">{{ title }}</md-primary-tab>
+  {%- for page in collections.pages -%}
+    {%- if page.data.title != title -%}
+      <md-primary-tab aria-label="{{ page.data.title }}" aria-controls="{{ page.data.title }}-panel">{{ page.data.title }}</md-primary-tab>
+    {%- endif -%}
+  {%- endfor -%}
+  </md-tabs>
+</header>
+<main>
+  <div id="{{ title }}-panel"
+       role="tabpanel"
+       aria-labelledby="{{ title }}-tab">{{ content | safe }}</div>
+  {%- for page in collections.pages -%}
+    {%- if page.title != title -%}
+      <div id="{{ page.data.title }}-panel"
+           role="tabpanel"
+           aria-labelledby="{{ page.data.title }}-tab"
+           hidden>{{ page.data.content | safe }}</div>
+    {%- endif -%}
+  {%- endfor -%}
+</main>
