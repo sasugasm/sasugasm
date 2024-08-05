@@ -1,15 +1,7 @@
 ---
 layout: base.njk
 ---
-<header>
-  <md-tabs>
-  {%- for page in title-collection.pages -%}
-    {%- if page.data.title != title -%}
-      <md-secondary-tab aria-label="{{ page.data.title }}" aria-controls="{{ page.data.title }}-panel"><a href={{ page.data.permalink }}>{{ page.data.title }}</a></md-secondary-tab>
-    {%- endif -%}
-  {%- endfor -%}
-  </md-tabs>
-</header>
+
 <main>
   <body>
   {{ content | safe }}
